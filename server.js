@@ -3,12 +3,12 @@ var express = require('express');
 var app = express();
 
 app.get('/wines', function(req,res){
-    console.log(req)
+    console.log(req.headers)
     res.send([{name:'wine1'}, {name:'wine2'}]);
 });
 
 app.get('/wines/:id', function(req,res){
-    console.log(req)
+    console.log(req.headers)
     res.send({id:req.params.id, name: "The Name", description:"description"});
 });
 
